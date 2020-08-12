@@ -1,0 +1,588 @@
+.menu {
+  position: relative;
+}
+
+.menu .btn {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  border: 3px solid #9DC13E;
+  background-color: #FCF9D6;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.menu .btn i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  text-align: center;
+  color: #9DC13E;
+  padding: 10px 13px;
+  font-size: 1.5em;
+}
+
+.menu .btn .cerrarBtn {
+  visibility: hidden;
+}
+
+.menu .btn .abrirBtn {
+  visibility: visible;
+}
+
+.menu .btn.abierto .cerrarBtn {
+  visibility: visible;
+}
+
+.menu .btn.abierto .abrirBtn {
+  visibility: hidden;
+}
+
+.menu .items {
+  width: 100%;
+  height: 100vh;
+  background-color: #FCF9D6;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  z-index: 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 3px solid #9DC13E;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  overflow-y: scroll;
+}
+
+.menu .items.abierto {
+  left: 0%;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.menu .items nav {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.menu .items nav a {
+  width: 100%;
+  display: block;
+  border: 3px solid #9DC13E;
+  color: #9DC13E;
+  text-align: center;
+  font-size: 1em;
+  padding: 2px 5px;
+  margin: 10px 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.menu .items nav a:hover {
+  border: 3px solid #F7B22E;
+  color: #F7B22E;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FCF9D6;
+}
+
+h3,
+h4,
+p,
+a,
+li,
+input,
+button {
+  color: #653B17;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.05em;
+}
+
+h1,
+h2 {
+  color: #9DC13E;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.subtitulo {
+  width: 100%;
+  height: 30vh;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.subtitulo h2 {
+  width: 90%;
+  text-align: center;
+  font-size: 1.7em;
+  color: #FCF9D6;
+  text-shadow: 1px 1px 20px #9DC13E, 3px 3px 5px #653B17;
+}
+
+.texto {
+  width: 85%;
+  margin: 20px auto;
+}
+
+.texto p {
+  padding: 10px 0;
+}
+
+.textoImg {
+  position: relative;
+  margin: 10px;
+}
+
+.textoImg:after {
+  content: ' ';
+  width: 95%;
+  height: 90%;
+  position: absolute;
+  top: calc(5% - 2px);
+  left: calc(2.5% - 2px);
+  border: 2px dashed #FCF9D6;
+}
+
+.fondoVerde {
+  background-color: rgba(157, 193, 62, 0.7);
+  padding: 10px;
+}
+
+.fondoRojo {
+  background-color: rgba(255, 99, 71, 0.7);
+  padding: 10px;
+}
+
+.fondoNaranja {
+  background-color: #F7B22E;
+  padding: 10px;
+}
+
+#huertaEnCasa,
+#planificacion,
+#herramientas,
+#suelo,
+#siambra {
+  margin: 0 0 40px;
+}
+
+#huertaEnCasa .texto h2,
+#planificacion .texto h2,
+#herramientas .texto h2,
+#suelo .texto h2,
+#siambra .texto h2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #9DC13E;
+  margin: 30px 0 10px;
+}
+
+#huertaEnCasa .texto h3,
+#planificacion .texto h3,
+#herramientas .texto h3,
+#suelo .texto h3,
+#siambra .texto h3 {
+  font-size: 1.3em;
+  color: #9DC13E;
+  margin: 10px 0;
+}
+
+/*--------------------Portada---------------------*/
+#portada {
+  background-image: url("https://wormsargentina.com/wp-content/uploads/2018/02/huerta.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: columns;
+          flex-direction: columns;
+}
+
+#portada .titulo {
+  width: 80%;
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #9DC13E;
+  position: relative;
+}
+
+#portada .titulo:after {
+  content: ' ';
+  width: 95%;
+  height: 90%;
+  position: absolute;
+  top: calc(5% - 2px);
+  left: calc(2.5% - 2px);
+  border: 2px dashed #FCF9D6;
+}
+
+#portada .titulo h1 {
+  color: #FCF9D6;
+  font-size: 2em;
+  text-align: center;
+}
+
+#portada .titulo p {
+  padding: 20px 0 0;
+  color: #FCF9D6;
+  text-align: center;
+}
+
+#portada .logo {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#portada .logo img {
+  width: 30%;
+  display: block;
+  margin: 0 auto;
+}
+
+#portada .logo p,
+#portada .logo h2 {
+  color: #F7B22E;
+  text-align: center;
+}
+
+#portada .logo h2 {
+  padding: 15px 0 5px;
+}
+
+/*--------------------Presentacion---------------------*/
+#presentacion {
+  width: 90%;
+  margin: 40px auto;
+  padding: 30px 0;
+}
+
+/*--------------------HuertaEnCasa---------------------*/
+#huertaEnCasa .subtitulo {
+  background-image: url("https://inta.gob.ar/sites/default/files/huerta_demostrativa_large_3.jpg");
+}
+
+#huertaEnCasa .huertaBeneficios {
+  position: relative;
+}
+
+#huertaEnCasa .huertaBeneficios ul {
+  background-color: rgba(157, 193, 62, 0.7);
+  list-style: none;
+  padding: 30px;
+  margin-top: 15px;
+}
+
+#huertaEnCasa .huertaBeneficios ul:after {
+  content: ' ';
+  width: 95%;
+  height: 90%;
+  position: absolute;
+  top: calc(5% - 2px);
+  left: calc(2.5% - 2px);
+  border: 2px dashed #FCF9D6;
+}
+
+#huertaEnCasa .huertaBeneficios ul li {
+  margin: 20px 0;
+  text-align: center;
+}
+
+/*--------------------Planificacion(tips)---------------------*/
+#planificacion {
+  position: relative;
+}
+
+#planificacion .subtitulo {
+  background-image: url("https://www.huertaencasa.com.uy/wp-content/uploads/2016/11/u-erta-2017-2.jpeg");
+}
+
+#planificacion .tiposDeHuerta {
+  margin: 20px 0;
+}
+
+/*--------------------Herramientas---------------------*/
+#herramientas .subtitulo {
+  background-image: url("https://www.lahuertadeivan.com/wp-content/uploads/2018/03/Mantenimiento-de-Herramientas-en-el-Huerto.png");
+}
+
+#herramientas .herramientas {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#herramientas .herramientas p {
+  width: 70%;
+}
+
+#herramientas .herramientas img {
+  width: 30%;
+  margin: 5px;
+}
+
+#herramientas .herramientas:nth-child(odd) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+#herramientas .herramientas:nth-child(odd) p {
+  margin: 0 10px;
+}
+
+/*--------------------suelo---------------------*/
+#suelo .subtitulo {
+  background-image: url("https://www.coca-colamexico.com.mx/content/dam/journey/mx/es/private/historia/2019/julio/motivos_para_cuidar_el_suelo_1.jpg");
+}
+
+#suelo ul {
+  margin: 15px 10px 0 10px;
+}
+
+#suelo ul li {
+  margin: 10px auto;
+  counter-increment: li;
+}
+
+#suelo ul li::before {
+  content: counter(li) ".";
+  color: #9DC13E;
+  margin-right: 3px;
+  font-weight: bold;
+}
+
+#suelo .tiposDeSuelo {
+  margin: 20px 0;
+}
+
+#suelo .sueloIdeal img {
+  width: 50%;
+  margin: 10px auto;
+}
+
+#suelo .antesydespuesCompost {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#suelo .antesydespuesCompost .antes,
+#suelo .antesydespuesCompost .despues {
+  width: 48%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#suelo .antesydespuesCompost .antes .textoImg,
+#suelo .antesydespuesCompost .despues .textoImg {
+  margin: 0;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+}
+
+#suelo .llevaynollevaCompost .lleva h3,
+#suelo .llevaynollevaCompost .nolleva h3 {
+  padding: 30px 0 15px;
+  color: #653B17;
+}
+
+#suelo .llevaynollevaCompost .lleva span,
+#suelo .llevaynollevaCompost .nolleva span {
+  color: tomato;
+}
+
+#suelo .llevaynollevaCompost .lleva h4,
+#suelo .llevaynollevaCompost .nolleva h4 {
+  text-align: center;
+  padding: 10px;
+}
+
+#suelo .llevaynollevaCompost .lleva .productosVerdes,
+#suelo .llevaynollevaCompost .lleva .productosCafe,
+#suelo .llevaynollevaCompost .lleva .noCompostables,
+#suelo .llevaynollevaCompost .nolleva .productosVerdes,
+#suelo .llevaynollevaCompost .nolleva .productosCafe,
+#suelo .llevaynollevaCompost .nolleva .noCompostables {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#suelo .llevaynollevaCompost .lleva .compostItem,
+#suelo .llevaynollevaCompost .nolleva .compostItem {
+  width: 30%;
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/*--------------------suelo---------------------*/
+#siembra .subtitulo {
+  background-image: url("https://cdn.bioguia.com/embed/45e8324a2a899a9b3197bcb4c45a2b089b1569945183/aprovechar-combinacion-plantas-huerta.jpg?imagick=1&size=500");
+}
+
+#siembra .siembradirecta,
+#siembra .siembraAlmacigo {
+  margin: 40px 0;
+}
+
+#siembra .siembradirecta .tiposDeSiembra,
+#siembra .siembraAlmacigo .tiposDeSiembra {
+  margin: 20px 0;
+}
+
+#siembra .siembradirecta h3,
+#siembra .siembraAlmacigo h3 {
+  padding: 10px 0;
+}
+
+#siembra .siembradirecta .directaVerduras,
+#siembra .siembradirecta .almacigoVerduras,
+#siembra .siembraAlmacigo .directaVerduras,
+#siembra .siembraAlmacigo .almacigoVerduras {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#siembra .siembradirecta .directaVerduras .verdurasItems,
+#siembra .siembradirecta .almacigoVerduras .verdurasItems,
+#siembra .siembraAlmacigo .directaVerduras .verdurasItems,
+#siembra .siembraAlmacigo .almacigoVerduras .verdurasItems {
+  width: 30%;
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+/*# sourceMappingURL=main.css.map */
